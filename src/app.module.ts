@@ -2,13 +2,12 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { GateModule } from './gate/gate.module';
 import { Gate } from './gate/entities/gate.entity';
-import { PrismaService } from './prisma/prisma.service';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: 'localhost',
+      host: '52.79.180.184',
       port: 1433,
       username: 'gofogo',
       password: '1',
@@ -19,6 +18,5 @@ import { PrismaService } from './prisma/prisma.service';
     }),
     GateModule,
   ],
-  providers: [PrismaService],
 })
 export class AppModule {}

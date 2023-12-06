@@ -54,6 +54,12 @@ export class GateService {
     return item;
   }
 
+  async clearToday(): Promise<boolean> {
+    const day = this.getTime();
+    const item = await this.gateRepository.delete({ day });
+    return true;
+  }
+
   findOne(num: number): Promise<Gate> {
     return this.gateRepository.findOneBy({ id: 0 });
   }

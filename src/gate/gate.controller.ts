@@ -16,6 +16,15 @@ export class GateController {
     return res.status(HttpStatus.OK).json([...gates]);
   }
 
+  //오늘 게이트 조회
+  @Get('delete')
+  @ApiTags('DELETE VISITOR')
+  async delete(@Res() res: Response) {
+    console.log('aaaaaaaaaaaaaa');
+    const item = await this.gateService.clearToday();
+    return res.status(HttpStatus.OK).json(item);
+  }
+
   //토탈
   @Get('total')
   @ApiTags('TOTAL VISITOR')

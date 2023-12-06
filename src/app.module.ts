@@ -7,7 +7,7 @@ import { Gate } from './gate/entities/gate.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: '52.79.180.184',
+      host: '127.0.0.1',
       port: 1433,
       username: 'gofogo',
       password: '1',
